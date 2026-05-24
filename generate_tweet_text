@@ -1,1 +1,15 @@
+import os
+import json
+
+# Load AI-generated content from a JSON file
+with open('ai-generated-content.json') as f:
+    ai_content = json.load(f)
+
+# Extract relevant information from the AI-generated content
+tweet_text = f"{ai_content['title']}: {ai_content['description']}"
+
+# Add some flair to the tweet text (optional)
+tweet_text += " #AIGeneratedContent #TheHumanLab"
+
+print(tweet_text)
 
