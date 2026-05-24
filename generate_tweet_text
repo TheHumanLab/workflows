@@ -12,4 +12,3 @@ tweet_text = f"{ai_content['title']}: {ai_content['description']}"
 tweet_text += " #AIGeneratedContent #TheHumanLab"
 
 print(tweet_text)
-
