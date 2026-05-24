@@ -1,1 +1,13 @@
+name: Upload to YouTube
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-to-youtube:
+    runs-on: ubuntu-latest
+    steps:
+      ...
 
