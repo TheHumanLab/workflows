@@ -1,0 +1,23 @@
+name: Tweet Automation
+on:
+  push:
+    branches:
+      - main
+jobs:
+  tweet-automation:
+    runs-on: ubuntu- latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate tweet text
+        run: |
+          python generate_tweet_text.py
+
+      - name: Post tweet
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
+        uses: actions/twitter-post@v1
+        with:
+          tweet-text: ${{ generate_tweet_text.py }}
